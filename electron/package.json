@@ -1,0 +1,38 @@
+{
+    "name": "my-electron-app",
+    "version": "1.0.0",
+    "main": "main.js",
+    "build": {
+      "appId": "com.example.myapp",
+      "productName": "MyApp",
+      "directories": {
+        "output": "release"
+      },
+      "files": [
+        "electron/**/*",
+        "build/**/*",
+        "package.json"
+      ],
+      "win": {
+        "target": "nsis"
+      },
+      "linux": {
+        "target": [
+          "AppImage",
+          "deb",
+          "tar.gz"
+        ],
+        "category": "Utility"
+      }
+    },
+    "scripts": {
+      "start": "electron .",
+      "build:win": "electron-builder --windows",
+      "build:linux": "electron-builder --linux"
+    },
+    "devDependencies": {
+      "electron": "^28.0.0",
+      "electron-builder": "^24.0.0"
+    }
+  }
+  
